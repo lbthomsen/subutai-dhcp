@@ -31,6 +31,8 @@ struct address_pool {
     time_t lease_time;   // default lease time
     time_t pending_time; // duration of a binding in the pending state
 
+    uint32_t port;  // port number
+
     dhcp_option_list options; // options for this pool, see queue
     
     binding_list bindings; // associated addresses, see queue(3)

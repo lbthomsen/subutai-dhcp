@@ -9,7 +9,7 @@
 #define USAGE_TXT							\
     NAME " - " VERSION "\n"						\
     "usage: [-a first,last] [-d device] [-o opt,value]\n"		\
-    "       [-p time] [-s mac,ip] server_address\n"
+    "       [-t time] [-p port] [-s mac,ip] server_address\n"
 
 /* 
  * Usage description:

@@ -28,6 +28,8 @@ void parse_args(int argc, char *argv[], address_pool *pool)
     int c;
 
     opterr = 0;
+    // When port is set to 0 dhcpserver will pick port number with getservbyname()
+    pool->port = 0;
 
     while ((c = getopt (argc, argv, "a:d:o:p:s:")) != -1)
 	switch (c) {
@@ -101,7 +103,7 @@ void parse_args(int argc, char *argv[], address_pool *pool)
 		break;
 	    }
 
-	case 'p': // parse pending time
+	case 't': // parse pending time
 	    {
 		time_t *t;
 
@@ -112,6 +114,21 @@ void parse_args(int argc, char *argv[], address_pool *pool)
 		free(t);
 		break;
 	    }
+
+    case 'p':
+        {
+            uint32_t *port = 0;
+            if (parse_long(optarg, (void **)&port) != 4)
+                usage("error: invalid port.", 1);
+
+            if (*port < 1 || *port > 65535)
+                usage("error: unvalid port number calue", 1);
+
+            pool->port = *port;
+            printf("Port number %d\n", pool->port);
+            free(port);
+            break;
+        }
 
 	case 's': // static binding
 	    {
