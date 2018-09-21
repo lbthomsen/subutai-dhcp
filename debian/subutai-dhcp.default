@@ -1,0 +1,10 @@
+# Defaults for subutai-dhcp initscript
+# sourced by /etc/init.d/subutai-dhcp
+# installed at /etc/default/subutai-dhcp by the maintainer scripts
+
+#
+# This is a POSIX shell fragment
+#
+
+# Additional options that are passed to the Daemon.
+DAEMON_OPTS=""

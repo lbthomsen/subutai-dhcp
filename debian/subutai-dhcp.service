@@ -1,0 +1,12 @@
+[Unit]
+Description=Subutai dhcp Startup
+After=openvswitch-switch.service
+
+[Service]
+Type=simple
+EnvironmentFile=-/etc/default/subutai-dhcp
+ExecStart=/bin/bash -c "/usr/sbin/subutai-dhcp -a 10.10.10.10,10.10.10.240 -d lxc-br 10.10.10.254"
+
+[Install]
+WantedBy=multi-user.target
+Alias=subutai-dhcp.service

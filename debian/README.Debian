@@ -1,0 +1,8 @@
+subutai-dhcp for Debian
+----------------------
+
+Simple DHCP server for Subutai.
+
+Originally based on https://github.com/crossbowerbt/dhcpserver.
+
+ -- Lars Boegild Thomsen <lbthomsen@optimal-dynamics.com>  Sun, 19 Aug 2018 11:03:39 +0800

@@ -1,0 +1,13 @@
+Source: subutai-dhcp
+Section: unknown
+Priority: optional
+Maintainer: Lars Boegild Thomsen <lbthomsen@optimal-dynamics.com>
+Build-Depends: debhelper (>= 10)
+Standards-Version: 3.9.8
+Homepage: https://subutai.io
+
+Package: subutai-dhcp
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Subutai DHCP Server
+ Subutai DHCP Server - provides a basic DHCP server for containers.
